@@ -12,6 +12,7 @@ end
 module Lsatools
   class Application < Rails::Application
     config.hobo.app_name = "LSA Tools"
+    config.assets.initialize_on_precompile = false
     
     # Hobo: the admin subsite loads admin.css & admin.js
     config.assets.precompile += %w(admin.css admin.js)
