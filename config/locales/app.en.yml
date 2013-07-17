@@ -3,6 +3,14 @@
 
 en:
   hello: "Hello world"
+  
+  time:
+    formats:
+      default: "%m/%d/%Y %H:%M %P"
+
+  attributes:
+    begin_at: Begin date/time
+    end_at: End date/time
 
 #  attributes:
 #    created_at: Created at

@@ -5,6 +5,60 @@
 Lsatools::Application.routes.draw do
 
 
+  # Resource routes for controller agenda_items
+  resources :agenda_items, :only => [:new, :edit, :show, :create, :update, :destroy] do
+    collection do
+      post 'reorder'
+    end
+  end
+
+  # Owner routes for controller agenda_items
+  resources :meetings, :as => :meeting, :only => [] do
+    resources :agenda_items, :only => [] do
+      collection do
+        post 'create', :action => 'create_for_meeting'
+      end
+    end
+  end
+
+
+  # Resource routes for controller meetings
+  resources :meetings
+
+
+  # Resource routes for controller projects
+  resources :projects
+
+
+  # Resource routes for controller tasks
+  resources :tasks, :only => [:new, :edit, :show, :create, :update, :destroy] do
+    collection do
+      post 'reorder'
+    end
+  end
+
+  # Owner routes for controller tasks
+  resources :agenda_items, :as => :agenda_item, :only => [] do
+    resources :tasks, :only => [] do
+      collection do
+        post 'create', :action => 'create_for_agenda_item'
+      end
+    end
+  end
+
+
+  # Resource routes for controller topics
+  resources :topics, :only => [:index, :edit, :show, :create, :update, :destroy] do
+    collection do
+      post 'reorder'
+    end
+    member do
+      post 'move_higher'
+      post 'move_lower'
+    end
+  end
+
+
   # Resource routes for controller users
   resources :users, :only => [:edit, :show, :create, :update, :destroy] do
     member do

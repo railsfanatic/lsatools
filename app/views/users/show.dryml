@@ -1,0 +1,10 @@
+<show-page>
+  <content-body:>
+    <h3><Your/> Assigned Tasks</h3>
+    <repeat with="&@user.tasks.group_by(&:agenda_item)">
+      <h3>Meeting: <a with="&this_key.meeting"/></h3>
+      <h4>Agenda Item: <a with="&this_key"/></h4>
+      <collection/>
+    </repeat>
+  </content-body:>
+</show-page>

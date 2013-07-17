@@ -1,6 +1,69 @@
 <!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
 
 
+<def tag="card" for="AgendaItem">
+  <card class="agenda-item" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <ht key="task.collection.count" count="&this.tasks.size">
+         <count:tasks param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="Meeting">
+  <card class="meeting" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <ht key="agenda_item.collection.count" count="&this.agenda_items.size">
+         <count:agenda_items param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="Project">
+  <card class="project" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Task">
+  <card class="task" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="TaskAssignment">
+  <card class="task-assignment" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Topic">
+  <card class="topic" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <ht key="agenda_item.collection.count" count="&this.agenda_items.size">
+         <count:agenda_items param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
 <def tag="card" for="User">
   <card class="user" param="default" merge>
     <header: param>

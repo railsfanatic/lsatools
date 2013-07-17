@@ -1,0 +1,7 @@
+<index-page>
+  <collection: replace>
+    <table-plus: with="&@meetings" fields="this, begin_at, location">
+      <empty-message:>No meetings match your criteria</empty-message:>
+    </table-plus>
+  </collection:>
+</index-page>

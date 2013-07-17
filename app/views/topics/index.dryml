@@ -1,0 +1,5 @@
+<index-page>
+  <collection: replace>
+  <sortable-collection: with="&@topics" />
+  </collection:>
+</index-page>

@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "acts_as_list", "0.2.0"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -38,6 +39,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "hobo", "= 2.0.1"
+#gem "hobo", git: 'git://github.com/Hobo/hobo.git'
 # Hobo has a lot of assets.   Stop cluttering the log in development mode.
 gem "quiet_assets", :group => :development
 # Hobo's version of will_paginate is required.

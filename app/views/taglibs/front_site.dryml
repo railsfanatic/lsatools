@@ -15,3 +15,40 @@
 <include src="taglibs/auto/rapid/forms"/>
 
 <include src="application"/>
+
+<extend tag="card" for="Task">
+  <old-card merge>
+  <append-body:>
+    <div class="users">
+      Assigned users: <repeat:users join=", "><a/></repeat><else>None</else>
+    </div>
+  </append-body:>
+  </old-card>
+</extend>
+
+<extend tag="card" for="Topic">
+  <old-card merge>
+  <append-body:>
+    <div class="counts">
+      <count:projects />, <count:agenda_items />
+    </div>
+  </append-body:>
+  </old-card>
+</extend>
+
+<extend tag="form" for="Topic">
+  <old-form merge>
+    <field-list: fields="name"/>
+  </old-form>
+</extend>
+
+<extend tag="form" for="Project">
+  <old-form merge>
+    <field-list: fields="name, start_at, end_at, topic">
+      <input:start_at yearRange="2012:#{Date.today.year}" />
+    </field-list:>
+  </old-form>
+</extend>
+
+
+

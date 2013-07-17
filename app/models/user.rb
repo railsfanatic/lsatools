@@ -6,9 +6,15 @@ class User < ActiveRecord::Base
     name          :string, :required, :unique
     email_address :email_address, :login => true
     administrator :boolean, :default => false
+    task_assignments_count  :integer
     timestamps
   end
-  attr_accessible :name, :email_address, :password, :password_confirmation, :current_password
+  attr_accessible :name, :email_address, :password, :password_confirmation, :current_password, :task_assignments, :tasks
+  
+  validates_presence_of :name
+  
+  has_many :task_assignments, dependent: :destroy, inverse_of: :user
+  has_many :tasks, through: :task_assignments
 
   # This gives admin rights and an :active state to the first sign-up.
   # Just remove it if you don't want that
